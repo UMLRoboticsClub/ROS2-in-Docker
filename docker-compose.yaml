@@ -1,0 +1,13 @@
+version: '2'
+
+services:
+  talker:
+    container_name: talker
+    image: riverhawk-robotics/talker
+    build: ./talker
+  listener:
+    container_name: listener
+    image: riverhawk-robotics/listener
+    build: ./listener
+    depends_on:
+      - talker
